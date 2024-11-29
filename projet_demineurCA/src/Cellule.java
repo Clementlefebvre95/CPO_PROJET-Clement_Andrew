@@ -12,7 +12,7 @@ public class Cellule {
 
     // Attributs privés
     private boolean presenceBombe; // Indique si une bombe est présente
-    private boolean devoilee;      // Indique si la cellule est dévoilée
+    boolean devoilee;      // Indique si la cellule est dévoilée
     private int nbBombesAdjacentes; // Nombre de bombes adjacentes
 
     // Constructeur
