@@ -4,25 +4,24 @@
  */
 package projet_demineurca;
 
-/**
- *
- * @author cleme
- */
+import java.util.Scanner;
+
 public class Projet_demineurCA {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        // Création d'une instance de Partie
-        Partie partie = new Partie();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Bienvenue dans le jeu Démineur !");
+            System.out.print("Entrez le nombre de lignes : ");
+            int lignes = scanner.nextInt();
 
-        // Initialisation de la partie avec une grille 5x5 et 5 bombes (modifiable)
-        partie.initialiserPartie(5, 5, 5);
+            System.out.print("Entrez le nombre de colonnes : ");
+            int colonnes = scanner.nextInt();
 
-        // Démarrage de la partie
-        partie.demarrerPartie();
+            System.out.print("Entrez le nombre de bombes : ");
+            int bombes = scanner.nextInt();
+
+            Partie partie = new Partie();
+            partie.initialiserPartie(lignes, colonnes, bombes);  // Appel de la méthode correctement
+            partie.demarrerPartie(scanner);
+        }
     }
-    }
-    
+}

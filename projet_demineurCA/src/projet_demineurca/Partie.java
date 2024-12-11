@@ -2,20 +2,47 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package projet_demineurca;
 
 /**
  *
  * @author ferre
  */
-class Partie {
 
-    void demarrerPartie() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+package projet_demineurca;
+
+import java.util.Scanner;
+
+public class Partie {
+    private GrilleDeJeu grille;
+
+    // Initialisation de la partie
+    public void initialiserPartie(int lignes, int colonnes, int bombes) {
+        grille = new GrilleDeJeu(lignes, colonnes, bombes);
     }
 
-    void initialiserPartie(int i, int i0, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Démarrage de la partie
+    public void demarrerPartie(Scanner scanner) {
+        while (true) {
+            System.out.println(grille.toString());
+            System.out.println("Entrez les coordonnées (ligne et colonne) pour révéler une cellule :");
+
+            int ligne = scanner.nextInt();
+            int colonne = scanner.nextInt();
+
+            // Vérification des coordonnées
+            if (ligne < 0 || ligne >= grille.getNbLignes() || colonne < 0 || colonne >= grille.getNbColonnes()) {
+                System.out.println("Coordonnées invalides, essayez encore.");
+                continue;
+            }
+
+            try {
+                grille.revelerCellule(ligne, colonne);
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+                break;
+            }
+        }
     }
-    
 }
+
+

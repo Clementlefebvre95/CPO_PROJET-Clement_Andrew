@@ -8,14 +8,15 @@
  * @author ferre
  */
 
+package projet_demineurca ;
+
 import java.util.Random;
 
 public class GrilleDeJeu {
-    // Attributs privés
-    private final Cellule[][] matriceCellules; // Grille de cellules
-    private final int nbLignes; // Nombre de lignes
-    private final int nbColonnes; // Nombre de colonnes
-    private final int nbBombes; // Nombre total de bombes
+    private final Cellule[][] matriceCellules;
+    private final int nbLignes;
+    private final int nbColonnes;
+    private final int nbBombes;
 
     // Constructeur
     public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
@@ -37,6 +38,15 @@ public class GrilleDeJeu {
         calculerBombesAdjacentes();
     }
 
+    // Accesseurs
+    public int getNbLignes() {
+        return nbLignes;
+    }
+
+    public int getNbColonnes() {
+        return nbColonnes;
+    }
+
     // Place les bombes aléatoirement dans la grille
     private void placerBombesAleatoirement() {
         Random rand = new Random();
@@ -46,7 +56,6 @@ public class GrilleDeJeu {
             int ligne = rand.nextInt(nbLignes);
             int colonne = rand.nextInt(nbColonnes);
 
-            // Vérifie si la cellule ne contient pas déjà une bombe
             if (!matriceCellules[ligne][colonne].getPresenceBombe()) {
                 matriceCellules[ligne][colonne].placerBombe();
                 bombesPlacees++;
@@ -125,5 +134,3 @@ public class GrilleDeJeu {
         return sb.toString();
     }
 }
-
-

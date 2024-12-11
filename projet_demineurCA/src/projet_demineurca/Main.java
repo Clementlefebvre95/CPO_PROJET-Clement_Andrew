@@ -4,6 +4,8 @@
  */
 package projet_demineurca;
 
+import java.util.Scanner;
+
 /**
  *
  * @author cleme
@@ -15,7 +17,8 @@ public class Main {
         try {
             // Lancer la partie
             Partie partie = new Partie();
-            partie.demarrerPartie();
+            Scanner scanner = null;
+            partie.demarrerPartie(scanner);
         } catch (Exception e) {
             // Gérer les erreurs inattendues pour éviter un crash
             System.out.println("Une erreur s'est produite : " + e.getMessage());

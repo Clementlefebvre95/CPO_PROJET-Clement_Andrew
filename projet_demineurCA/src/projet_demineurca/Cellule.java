@@ -7,10 +7,10 @@
  *
  * @author ferre
  */
-public class Cellule {
-    
+package projet_demineurca;
 
-    // Attributs privés
+public class Cellule {
+
     private boolean presenceBombe; // Indique si une bombe est présente
     boolean devoilee;      // Indique si la cellule est dévoilée
     private int nbBombesAdjacentes; // Nombre de bombes adjacentes
