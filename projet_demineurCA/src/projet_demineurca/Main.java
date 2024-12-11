@@ -22,6 +22,8 @@ public class Main {
         } catch (Exception e) {
             // Gérer les erreurs inattendues pour éviter un crash
             System.out.println("Une erreur s'est produite : " + e.getMessage());
+            
         }
+        
     }
-}
+  }
