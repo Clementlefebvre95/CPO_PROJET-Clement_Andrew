@@ -15,6 +15,8 @@ public class Interface extends javax.swing.JFrame {
      */
     public Interface() {
         initComponents();
+    JEU.setVisible(false);
+    PanelRegles.setVisible(false);
     }
 
     /**
@@ -35,6 +37,9 @@ public class Interface extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        PanelRegles = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +89,15 @@ public class Interface extends javax.swing.JFrame {
         );
 
         JEU.setBackground(new java.awt.Color(255, 255, 153));
+        JEU.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                JEUAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         jButton3.setText("jButton3");
 
@@ -124,15 +138,55 @@ public class Interface extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        PanelRegles.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel2.setText("LES REGLES SONT SIMPLES ...");
+
+        jButton5.setText("Accueil");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelReglesLayout = new javax.swing.GroupLayout(PanelRegles);
+        PanelRegles.setLayout(PanelReglesLayout);
+        PanelReglesLayout.setHorizontalGroup(
+            PanelReglesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelReglesLayout.createSequentialGroup()
+                .addGroup(PanelReglesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelReglesLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelReglesLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        PanelReglesLayout.setVerticalGroup(
+            PanelReglesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelReglesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jButton5)
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Accueil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
-                .addComponent(JEU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Accueil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)
+                        .addComponent(JEU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(PanelRegles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,7 +196,9 @@ public class Interface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JEU, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Accueil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(PanelRegles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -151,11 +207,24 @@ public class Interface extends javax.swing.JFrame {
     private void demarerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_demarerActionPerformed
         // TODO add your handling code here:
         Accueil.setVisible(false);
+        JEU.setVisible(true);
     }//GEN-LAST:event_demarerActionPerformed
 
     private void reglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reglesActionPerformed
         // TODO add your handling code here:
+        Accueil.setVisible(false);
+        PanelRegles.setVisible(true);
     }//GEN-LAST:event_reglesActionPerformed
+
+    private void JEUAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JEUAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JEUAncestorAdded
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+       PanelRegles.setVisible(false);
+       Accueil.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,12 +264,15 @@ public class Interface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Accueil;
     private javax.swing.JPanel JEU;
+    private javax.swing.JPanel PanelRegles;
     private javax.swing.JButton demarer;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton regles;
     // End of variables declaration//GEN-END:variables
 }
