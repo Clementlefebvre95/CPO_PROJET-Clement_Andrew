@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class InterfaceJeu extends javax.swing.JFrame {
-    private GrilleDeJeu grilleDeJeu; // Grille logique
+    private GrilleDeJeu GrilleDeJeu; // Grille logique
     private JPanel panneauGrille; // Panneau pour afficher la grille
 
     public InterfaceJeu() {
@@ -24,7 +24,7 @@ public class InterfaceJeu extends javax.swing.JFrame {
         setLayout(null);
 
         // Initialisation de la grille logique (10x10 avec 20 bombes)
-        grilleDeJeu = new GrilleDeJeu(10, 10, 20);
+        GrilleDeJeu = new GrilleDeJeu(10, 10, 20);
 
         // Création et affichage de la grille graphique
         initialiserGrilleGraphique();
@@ -36,8 +36,8 @@ public class InterfaceJeu extends javax.swing.JFrame {
         panneauGrille.setLayout(new GridLayout(10, 10)); // Grille 10x10
 
         // Ajouter les boutons à la grille graphique
-        for (int i = 0; i < grilleDeJeu.getNbLignes(); i++) {
-            for (int j = 0; j < grilleDeJeu.getNbColonnes(); j++) {
+        for (int i = 0; i < GrilleDeJeu.getNbLignes(); i++) {
+            for (int j = 0; j < GrilleDeJeu.getNbColonnes(); j++) {
                 JButton bouton = new JButton(); // Création du bouton
                 int ligne = i; // Indice de la ligne
                 int colonne = j; // Indice de la colonne
@@ -45,9 +45,9 @@ public class InterfaceJeu extends javax.swing.JFrame {
                 // Ajouter un événement de clic au bouton
                 bouton.addActionListener(e -> {
                     try {
-                        grilleDeJeu.revelerCellule(ligne, colonne); // Révéler la cellule logique
+                        GrilleDeJeu.revelerCellule(ligne, colonne); // Révéler la cellule logique
                         bouton.setText(Integer.toString(
-                            grilleDeJeu.matriceCellules[ligne][colonne].getNbBombesAdjacentes())); // Afficher les bombes adjacentes
+                            GrilleDeJeu.matriceCellules[ligne][colonne].getNbBombesAdjacentes())); // Afficher les bombes adjacentes
                     } catch (RuntimeException ex) {
                         bouton.setText("B"); // Afficher une bombe si déclenchée
                         System.out.println("Partie terminée !");
