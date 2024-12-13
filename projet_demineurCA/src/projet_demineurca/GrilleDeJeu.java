@@ -13,7 +13,11 @@ package projet_demineurca ;
 import java.util.Random;
 
 public class GrilleDeJeu {
-    private final Cellule[][] matriceCellules;
+
+    static void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    final Cellule[][] matriceCellules;
     private final int nbLignes;
     private final int nbColonnes;
     private final int nbBombes;
