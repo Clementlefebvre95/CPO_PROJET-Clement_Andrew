@@ -100,7 +100,7 @@ public class GrilleDeJeu {
 
         Cellule cellule = matriceCellules[ligne][colonne];
         if (cellule.getPresenceBombe()) {
-            throw new RuntimeException("Bombe déclenchée ! Partie terminée.");
+            throw new RuntimeException("Bombe déclenchee !");
         }
 
         cellule.revelerCellule();

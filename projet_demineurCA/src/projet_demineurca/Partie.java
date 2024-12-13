@@ -14,15 +14,17 @@ import java.util.Scanner;
 
 public class Partie {
     private GrilleDeJeu grille;
+    private int vies;
 
     // Initialisation de la partie
     public void initialiserPartie(int lignes, int colonnes, int bombes) {
         grille = new GrilleDeJeu(lignes, colonnes, bombes);
+        vies = 3;
     }
 
     // Démarrage de la partie
     public void demarrerPartie(Scanner scanner) {
-        while (true) {
+        while (vies>0) {
             System.out.println(grille.toString());
             System.out.println("Entrez les coordonnees pour reveler une cellule :");
             System.out.println("Saisir la ligne");
@@ -41,10 +43,25 @@ public class Partie {
                 grille.revelerCellule(ligne, colonne);
             } catch (RuntimeException e) {
                 System.out.println(e.getMessage());
-                break;
+                vies--;
+                afficherViesRestantes();
+                
+                if (vies==0){
+                    System.out.println("Vous avez perdu toutes vos vies");
+                    System.out.println("La partie est termine");
+                    break;
+                }
             }
+        
+        } }      
+    
+private void afficherViesRestantes(){
+                System.out.println("Vies restantes: "+ vies);
+            
+
         }
-    }
 }
+    
+
 
 
