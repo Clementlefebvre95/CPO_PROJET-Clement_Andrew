@@ -25,9 +25,10 @@ public class Partie {
         while (true) {
             System.out.println(grille.toString());
             System.out.println("Entrez les coordonnees pour reveler une cellule :");
-            System.out.println("Envoyer la ligne puis ensuite la colonne");
+            System.out.println("Saisir la ligne");
 
             int ligne = scanner.nextInt();
+            System.out.println("saisir la colonne");
             int colonne = scanner.nextInt();
 
             // Vérification des coordonnées
