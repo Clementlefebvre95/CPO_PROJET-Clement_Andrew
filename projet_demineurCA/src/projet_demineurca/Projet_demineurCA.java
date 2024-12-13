@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Projet_demineurCA {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Bienvenue dans le jeu Démineur !");
+            System.out.println("Bienvenue dans le jeu Demineur !");
             System.out.print("Entrez le nombre de lignes : ");
             int lignes = scanner.nextInt();
 
