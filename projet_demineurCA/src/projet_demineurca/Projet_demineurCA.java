@@ -23,5 +23,7 @@ public class Projet_demineurCA {
             partie.initialiserPartie(lignes, colonnes, bombes);  // Appel de la méthode correctement
             partie.demarrerPartie(scanner);
         }
+        
+        
     }
 }
