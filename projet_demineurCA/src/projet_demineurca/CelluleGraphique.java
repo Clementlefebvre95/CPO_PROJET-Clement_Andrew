@@ -25,6 +25,7 @@ public class CelluleGraphique {
         super.paintComponent(g);
         this.setText(cellule.toString());
     }
+
 }
 
     
