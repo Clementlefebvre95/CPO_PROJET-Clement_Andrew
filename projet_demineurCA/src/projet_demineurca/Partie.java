@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class Partie {
 
-    static void setVisible(boolean b) {
+    static void setVisible(boolean b)  {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     private GrilleDeJeu grille;
