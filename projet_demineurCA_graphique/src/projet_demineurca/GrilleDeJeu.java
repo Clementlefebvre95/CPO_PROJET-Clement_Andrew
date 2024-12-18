@@ -10,7 +10,6 @@
 
 package projet_demineurca ;
 
-import static java.awt.image.ImageObserver.PROPERTIES;
 import java.util.Random;
 
 public class GrilleDeJeu {
@@ -53,7 +52,7 @@ public class GrilleDeJeu {
     }
 
     // Place les bombes aléatoirement dans la grille
-    public void placerBombesAleatoirement(int PROPERTIES, int PROPERTIES1) {
+    private void placerBombesAleatoirement(int PROPERTIES, int PROPERTIES1) {
         Random rand = new Random();
         int bombesPlacees = 0;
 
@@ -140,10 +139,6 @@ public class GrilleDeJeu {
     }
 
     public void initialiserGrille() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void clickSurCellule(int y, int x) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
